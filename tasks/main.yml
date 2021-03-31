@@ -1,11 +1,11 @@
 ---
 
 - name: Install python-passlib
-  package:
+  ansible.builtin.package:
     name: python-passlib
 
 - name: "Add {{ BASIC_AUTH_USER }} to {{ container_storage_dir_base }}/nginx/htpasswd/{{ VIRTUAL_HOST }}"
-  htpasswd:
+  community.general.htpasswd:
     path: "{{ container_storage_dir_base }}/nginx/htpasswd/{{ VIRTUAL_HOST }}"
     name: "{{ BASIC_AUTH_USER }}"
     password: "{{ BASIC_AUTH_PASSWD }}"
