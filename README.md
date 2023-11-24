@@ -27,7 +27,7 @@ Example Playbook
     - hosts: "server"
       user: root
       vars:
-        DOCKER_NETWORK_NAME: 'custom_docker_network'
+        docker_network_name: 'custom_docker_network'
         BASIC_AUTH_USER: admin
         BASIC_AUTH_PASSWD: password
       roles:
