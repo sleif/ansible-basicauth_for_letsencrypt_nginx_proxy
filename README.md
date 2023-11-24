@@ -11,8 +11,8 @@ Use it on a machine setup with ansible role sleif.docker.
 Role Variables
 --------------
 - container_storage_dir_base (/srv)
-- BASIC_AUTH_USER
- -BASIC_AUTH_PASSWD
+- basic_auth_user
+ -basic_auth_passwd
 
 Dependencies
 ------------
@@ -28,8 +28,8 @@ Example Playbook
       user: root
       vars:
         docker_network_name: 'custom_docker_network'
-        BASIC_AUTH_USER: admin
-        BASIC_AUTH_PASSWD: password
+        basic_auth_user: admin
+        basic_auth_passwd: password
       roles:
         - { role: sleif.basicauth_for_letsencrypt_nginx_proxy, tags: "basicauth_for_letsencrypt_nginx_proxy" }
 

@@ -4,8 +4,9 @@
   ansible.builtin.package:
     name: python-passlib
 
-- name: "Add {{ BASIC_AUTH_USER }} to {{ container_storage_dir_base }}/nginx/htpasswd/{{ VIRTUAL_HOST }}"
+- name: "Add {{ basic_auth_user }} to {{ container_storage_dir_base }}/nginx/htpasswd/{{ VIRTUAL_HOST }}"
   community.general.htpasswd:
     path: "{{ container_storage_dir_base }}/nginx/htpasswd/{{ VIRTUAL_HOST }}"
-    name: "{{ BASIC_AUTH_USER }}"
-    password: "{{ BASIC_AUTH_PASSWD }}"
+    name: "{{ basic_auth_user }}"
+    password: "{{ basic_auth_passwd }}"
+    mode: '0644'
